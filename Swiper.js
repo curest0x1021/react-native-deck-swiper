@@ -469,8 +469,8 @@ class Swiper extends Component {
 
     while (stackSize-- > 1 && showSecondCard && !swipedAllCards) {
       if (this.state[`stackPosition${stackSize}`] && this.state[`stackScale${stackSize}`]) {
-        const newSeparation = this.props.stackSeparation * (stackSize - 1)
-        const newScale = (100 - this.props.stackScale * (stackSize - 1)) * 0.01
+        const newSeparation = this.props.stackSeparation * (stackSize)
+        const newScale = (100 - this.props.stackScale * (stackSize)) * 0.01
         Animated.parallel([
           Animated.spring(this.state[`stackPosition${stackSize}`], {
             toValue: newSeparation,
